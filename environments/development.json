@@ -1,0 +1,9 @@
+{
+	"port": 4000,
+	"mongo_url": "mongodb://hemanth:sunny1996@ds031193.mlab.com:31193/first_app",
+	"mongo_user": "<USER_NAME>",
+	"mongo_pass": "<USER_PASSWORD>",
+	"mongo_options": {
+		"useNewUrlParser": true
+	}
+}

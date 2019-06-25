@@ -1,0 +1,51 @@
+# Write your query or mutation here
+# mutation {
+#   createCat(name: "HEMANTH") {
+#     id
+#     name
+#   }
+# }
+# query {
+#   getAllUsers {
+#     id
+#     name
+#     country
+#     city
+#     created_at
+#     updated_at
+#   }
+# }
+# mutation {
+#   createUser(input: {name:"Naga Hemanth 2", contact:"8989988989", country:"India"}) {
+#     id
+#     name
+#     contact
+#     country
+#   }
+# }
+
+mutation {
+  updateUser(id: "5d0fafeac4b3851b7cb11e3a", input: { country: "India", contact: "8023987893", city: "Bengaluru"}) {
+    country
+    name
+  }
+}
+
+# mutation updateUser($id: ID!, $input: UserInput){
+#   updateUser(id: $id, input: $input) {
+#     country
+#     name
+#   }
+# }
+
+{
+  "id": "5d0fb0e624289b2070656613",
+  "input": {
+    "name": "Updated Naga Hemanth 2",
+    "contact": "1111111",
+    "country": "Updated India",
+    "email": "hemanth.vja@gmail.com",
+    "state": "Andhra Pradesh",
+    "zip_code": "520012"
+  }
+}
