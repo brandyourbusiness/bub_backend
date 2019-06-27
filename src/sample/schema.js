@@ -1,4 +1,5 @@
 import { gql } from 'apollo-server-express';
+import GraphqlQLJSON from 'graphql-type-json';
 import { Cat } from './models';
 import formList from '../lib/modules/form_list';
 import resolvers from '../lib/graphql/resolvers';
@@ -108,6 +109,45 @@ class initGraphqlSchema {
 			}
 		`;
 		this.options["resolvers"] = resolvers(this.config, formList);
+		// this.options["resolvers"] = {
+		// 	JSON: GraphqlQLJSON,
+		// 	Query: {
+		// 		hello: () => 'world!',
+		// 		getAllUsers: () => {
+		// 			return this.config.entities.users.find({});
+		// 		},
+		// 		getAllBrands: () => {
+		// 			return this.config.entities.brands.find({});
+		// 		},
+		// 		getAllFormsList: (parent, args, context, info) => {
+		// 			return { list: formList };
+		// 		}
+		// 	},
+		// 	Mutation: {
+		// 		createCat: async(_, {name, age}) => {
+		// 			const cat = Cat({name, age});
+		// 			return cat.save();
+		// 		},
+		// 		createUser: async(_, { input }) => {
+		// 			input["created_at"] = new Date();
+		// 			return this.config.entities.users(input).save();
+		// 		},
+		// 		updateUser: async(_, {id, input}) => {
+		// 			input["updated_at"] = new Date();
+		// 			return this.config.entities.users
+		// 				.findOneAndUpdate({_id: id}, input, {}, (err, data) => data)
+		// 		},
+		// 		createBrand: async(_, { input }) => {
+		// 			input["created_at"] = new Date();
+		// 			return this.config.entities.brands(input).save();
+		// 		},
+		// 		updateBrand: async(_, {id, input}) => {
+		// 			input["updated_at"] = new Date();
+		// 			return this.config.entities.brands
+		// 				.findOneAndUpdate({_id: id}, input, {}, (err, data) => data)
+		// 		}
+		// 	}			
+		// }
 	}
 }
 
