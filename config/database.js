@@ -8,6 +8,8 @@ class initDatabase {
 
 	setUp() {
 		mongoose.set('useCreateIndex', true);
+		mongoose.set('useFindAndModify', false);
+		mongoose.set('useCreateIndex', true);
 		mongoose.connect(this.config.mongo_url, this.config.mongo_options);
 	}
 }

@@ -2,7 +2,8 @@
 import { initApollo } from '../config/apollo';
 import { initDatabase } from '../config/database';
 import { initServer } from '../config/express';
-import { initGraphqlSchema } from '../src/schema';
+import { initGraphqlSchema } from '../lib/graphql/schema';
+// import { initRoutes } from '../lib/routes';
 
 module.exports = async (config, options) => {
 	config = Object.assign({}, config, getEnv(config));
@@ -13,6 +14,7 @@ module.exports = async (config, options) => {
 		await new initGraphqlSchema(config, options);
 		await new initApollo(config, options);
 		await new initDatabase(config, options);
+		// await new initRoutes(config, options);
 
 		server.start();
 		return config;

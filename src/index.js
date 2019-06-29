@@ -1,14 +1,20 @@
 // Includes external plugins like sentry, logging, monitoring
 import setUpServer from "./app";
+import dotenv from "dotenv";
 import globalInit from "../global_lib";
 import entities from "../lib/entities";
+import jobs from "../lib/jobs";
 
 (
 	async (config={}, options={}) => {
-		config = await setUpServer(config, options);
-		
+		// To read .env variables
+		dotenv.config();
 
-		options['entities'] = entities;
+		config = await setUpServer(config, options);
+		options = Object.assign(options, {
+			entities: entities,
+			jobs: jobs
+		});
 
 		await new globalInit(config, options);
 	}

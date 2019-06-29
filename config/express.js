@@ -1,7 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-
 /*
 	bodyParser: to server
 	cors: to give access for Cross platforms

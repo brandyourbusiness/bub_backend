@@ -18,6 +18,9 @@ https://www.apollographql.com/docs/apollo-server/essentials/data/
 https://www.apollographql.com/docs/graphql-tools/generate-schema/#extending-types
 6. File upload: https://www.apollographql.com/docs/apollo-server/features/file-uploads/
 
+7. Merge different files: https://www.apollographql.com/docs/apollo-server/essentials/data/
+8. Custom data types (scalars & enums): https://www.apollographql.com/docs/graphql-tools/scalars/
+
 # Complete guide Apollo2.0 (includes different middlewares)
 1. https://www.apollographql.com/docs/apollo-server/migration-two-dot/
 2. Live Example: https://graphql.org/graphql-js/mutations-and-input-types/
@@ -27,3 +30,9 @@ https://www.apollographql.com/docs/graphql-tools/generate-schema/#extending-type
 1. Schemas: https://mongoosejs.com/docs/validation.html
 2. Indexes: https://mongoosejs.com/docs/guide.html#indexes
 3. SchemaTypes: https://mongoosejs.com/docs/schematypes.html
+
+# Twilio support 
+1. Logs: https://www.twilio.com/console/sms/logs/SMcd204e4104aa4da98824e45973965dd8
+2. Docs: https://www.twilio.com/docs/sms/quickstart/node#send-an-outbound-sms-message-with-nodejs
+3. Debugger: https://www.twilio.com/console/runtime/debugger?quickDate=24
+4. Support: https://support.twilio.com/hc/en-us/articles/223181868-Troubleshooting-Undelivered-Twilio-SMS-Messages
