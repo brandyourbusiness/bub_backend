@@ -21,6 +21,15 @@ https://www.apollographql.com/docs/graphql-tools/generate-schema/#extending-type
 7. Merge different files: https://www.apollographql.com/docs/apollo-server/essentials/data/
 8. Custom data types (scalars & enums): https://www.apollographql.com/docs/graphql-tools/scalars/
 
+Follow these step-by-step for login-context:
+
+9. Apollo Context: https://medium.com/the-guild/authentication-and-authorization-in-graphql-and-how-graphql-modules-can-help-fadc1ee5b0c2
+10. Authentication: https://blog.apollographql.com/authorization-in-graphql-452b1c402a9
+11. Complete backend setup for login -
+	a) graphql + passport https://blog.pusher.com/handling-authentication-in-graphql-jwt/
+	b) graphql + auth0 https://blog.pusher.com/handling-authentication-in-graphql-auth0/
+	c) Gmail API (video) https://www.youtube.com/watch?v=W87udYTA1rw
+
 # Complete guide Apollo2.0 (includes different middlewares)
 1. https://www.apollographql.com/docs/apollo-server/migration-two-dot/
 2. Live Example: https://graphql.org/graphql-js/mutations-and-input-types/
