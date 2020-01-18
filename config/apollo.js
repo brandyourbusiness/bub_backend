@@ -4,11 +4,14 @@ import {
 	ForbiddenError,
 	UserInputError
 } from "apollo-server-express";
+import { auth } from "./firebase";
+import { verifyUserWithEmail } from "../src/auth";
 
 class initApollo {
 	constructor(config, options) {
 		this.config = config;
 		this.options = options;
+		this.config["user"] = {};
 		this.setUp();
 	}
 
@@ -17,24 +20,40 @@ class initApollo {
 		let apolloServer = new ApolloServer({
 			typeDefs: this.options["typeDefs"],
 			resolvers: this.options["resolvers"],
-			// context: async ({ req }) => {
-			// 	console.log("REQ", req)
-			// 	let authToken = null;
-			// 	let currentUser = null;
-			// 	try {
-			// 		authToken = req.headers.authorization;
-			// 		// currentUser = validateTokenAndUser()	
-			// 	} catch (e) {
-			// 		console.log(`Error in context block : ${e}`)
-			// 		return e;
-			// 	}
-			// 	if (!currentUser) {
-			// 		throw new AuthenticationError(`Something went wrong. Please try again.`)
-			// 	}
-			// 	return {
-			// 		authToken
-			// 	};
-			// },
+			context: async ({ req }) => {
+				let authToken = "";
+				let currentUser = {
+					email: "",
+					roles: []
+				};
+				try {
+					authToken = req.headers.authorization
+						? req.headers.authorization.replace("Bearer ", "")
+						: "";
+					if (authToken !== "") {
+						await auth.verifyIdToken(authToken).then(async decodedToken => {
+							await verifyUserWithEmail(this.config, {
+								email: decodedToken.email
+							}).then(res => {
+								currentUser = res;
+								this.config["user"] = res;
+							});
+						});
+					}
+				} catch (e) {
+					console.log(`Error in context block : ${e}`);
+					return e;
+				}
+				if (!currentUser) {
+					throw new AuthenticationError(
+						`Something went wrong. Please try again.`
+					);
+				}
+				return {
+					authToken,
+					currentUser
+				};
+			},
 			formatError: err => {
 				if (err.message.startsWith("Database Error: ")) {
 					return new Error("Internal Server Error");

@@ -3,7 +3,8 @@
 2. Code reference: https://github.com/benawad/graphql-mongo-server/blob/master/src/index.js
 
 # Install babel
-https://babeljs.io/setup#installation
+1. https://babeljs.io/setup#installation
+2. https://babeljs.io/docs/en/babel-plugin-transform-runtime
 
 # To learn apollo backend, follow these in order 
 1. Start with brief example:
@@ -45,3 +46,12 @@ Follow these step-by-step for login-context:
 2. Docs: https://www.twilio.com/docs/sms/quickstart/node#send-an-outbound-sms-message-with-nodejs
 3. Debugger: https://www.twilio.com/console/runtime/debugger?quickDate=24
 4. Support: https://support.twilio.com/hc/en-us/articles/223181868-Troubleshooting-Undelivered-Twilio-SMS-Messages
+
+# Firebase Admin SDK
+1. firebase-admin: https://firebase.google.com/docs/auth/admin/verify-id-tokens
+2. google-auth-library: https://github.com/googleapis/google-auth-library-nodejs
+
+
+# Complete GCP (app.yaml) & MongoDB Atlas
+*** https://medium.com/@paulrohan/deploying-a-react-node-mongodb-app-to-google-cloud-platforms-google-app-engine-1ba680447d59
+** https://cloud.google.com/community/tutorials/nodejs-mongodb-on-appengine

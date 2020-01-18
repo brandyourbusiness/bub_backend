@@ -2,8 +2,7 @@
 import setUpServer from "./app";
 import dotenv from "dotenv";
 import globalInit from "../global_lib";
-import entities from "../lib/entities";
-import jobs from "../lib/jobs";
+import library from "../lib";
 
 (
 	async (config={}, options={}) => {
@@ -11,10 +10,7 @@ import jobs from "../lib/jobs";
 		dotenv.config();
 
 		config = await setUpServer(config, options);
-		options = Object.assign(options, {
-			entities: entities,
-			jobs: jobs
-		});
+		options = Object.assign(options, library);
 
 		await new globalInit(config, options);
 	}
